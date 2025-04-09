@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f6f6;
+  --foreground: #181818;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-ibm-plex-mono);
+  --font-custom: var(--custom-font-integral);
+  --container-5xl: 71.25rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
 
@@ -23,4 +25,39 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes electricityFlow {
+  0% {
+    stroke-dashoffset: 500; /* Começa fora da vista */
+  }
+  50% {
+    stroke-dashoffset: 0; /* A linha atinge o meio do caminho */
+  }
+  100% {
+    stroke-dashoffset: -500; /* A linha vai até o final do caminho */
+  }
+}
+
+.electricity-effect {
+  animation: electricityFlow 4s infinite linear; /* A animação dura 3s e se repete infinitamente */
+  stroke-dasharray: 500; /* Define o comprimento do caminho */
+  stroke-dashoffset: 500; /* Define o valor inicial */
+}
+
+.electricity-effect-2 {
+  animation: electricityFlow 3s infinite linear; /* A animação dura 3s e se repete infinitamente */
+  stroke-dasharray: 500; /* Define o comprimento do caminho */
+  stroke-dashoffset: 500; /* Define o valor inicial */
+}
+
+.electricity-effect-3 {
+  animation: electricityFlow 2s infinite linear; /* A animação dura 3s e se repete infinitamente */
+  stroke-dasharray: 500; /* Define o comprimento do caminho */
+  stroke-dashoffset: 500; /* Define o valor inicial */
+}
+.electricity-effect-4 {
+  animation: electricityFlow 5s infinite linear; /* A animação dura 3s e se repete infinitamente */
+  stroke-dasharray: 500; /* Define o comprimento do caminho */
+  stroke-dashoffset: 500; /* Define o valor inicial */
 }
