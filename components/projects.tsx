@@ -1,7 +1,7 @@
 import { projects } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
-import Device from "./project/device";
+import Device from "./ui/device";
 
 export default function Projects() {
   return (

@@ -6,7 +6,7 @@ import {
   SiMongodb,
   SiPostgresql,
 } from "react-icons/si";
-import SkillsContainer from "./skills/skills";
+import SkillsContainer from "./ui/skills";
 
 export default function Skills() {
   return (
