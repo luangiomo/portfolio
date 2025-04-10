@@ -27,7 +27,7 @@ function About() {
         </div>
       </div>
       <h2 className="leading-tight text-xl text-white uppercase font-mono mb-4">
-        Ola, Bom dia!
+        Muito prazer!
       </h2>
       <p className="leading-tight font-sans text-white/60 text-sm text-justify">
         Meu nome é <span className="text-white">Luan Giomo</span> e sou um{" "}
