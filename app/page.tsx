@@ -1,5 +1,4 @@
 import Container from "@/components/ui/container";
-
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { navigations } from "@/data/navigation";
@@ -7,12 +6,8 @@ import { navigations } from "@/data/navigation";
 export default function Home() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12">
-      <aside className=" h-screen sticky top-0 col-span-4 md:col-span-3 hidden md:flex md:flex-col pr-12 pt-12">
+      <aside className="h-screen sticky top-0 col-span-4 md:col-span-3 hidden md:flex md:flex-col pr-12 pt-12">
         <div className="relative self-end w-10/12 flex flex-col items-end gap-2 end">
-          {/* <select className="w-full bg-white/10 border border-white/20 rounded-lg p-2 font-mono text-xs text-white/60 appearance-none">
-            <option defaultValue="pt">Português (Brasil)</option>
-            <option value="en">English</option>
-          </select> */}
           <div className="w-full ">
             <Header mode="vertical" />
           </div>

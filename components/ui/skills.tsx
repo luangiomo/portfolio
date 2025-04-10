@@ -3,10 +3,10 @@ import { SkillType, skillsData } from "@/data/skills";
 import { useState } from "react";
 
 //SVG Paths
-import FirstPath from "@/app/assets/paths/first-path.svg";
-import FourthPath from "@/app/assets/paths/fourth-path.svg";
-import SecondPath from "@/app/assets/paths/second-path.svg";
-import ThirdPath from "@/app/assets/paths/third-path.svg";
+// import FirstPath from "@/app/assets/paths/first-path.svg";
+// import FourthPath from "@/app/assets/paths/fourth-path.svg";
+// import SecondPath from "@/app/assets/paths/second-path.svg";
+// import ThirdPath from "@/app/assets/paths/third-path.svg";
 
 export default function SkillsContainer() {
   const [currentSkill, setCurrentSkill] = useState<SkillType | undefined>(
@@ -64,7 +64,7 @@ export default function SkillsContainer() {
           {" ]"}
         </div>
       </code>
-      <div className="transition-colors duration-300 stroke-1 stroke-white/20">
+      {/* <div className="transition-colors duration-300 stroke-1 stroke-white/20">
         <FirstPath
           className="absolute right-80 z-20 pulse-animation electricity-effect ease-in-out"
           style={{
@@ -97,7 +97,7 @@ export default function SkillsContainer() {
           }}
         />
         <FourthPath className="absolute right-20.5 top-20 z-10" />
-      </div>
+      </div> */}
       <div className="justify-self-end relative mt-7 transition-colors duration-300 w-80 px-2 py-2 z-30 border border-white/20 rounded-2xl bg-linear-to-b from-white/10 to-white/0">
         <div className="flex">
           {primarySkills.map((skill, index) => (

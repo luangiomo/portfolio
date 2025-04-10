@@ -1,6 +1,6 @@
-import { SiGithub, SiLinkedin } from "react-icons/si";
+// import { SiGithub, SiLinkedin } from "react-icons/si";
 
-function About() {
+export default function About() {
   return (
     <div className="w-full lg:w-10/12 space-y-6">
       <div className="">
@@ -15,14 +15,14 @@ function About() {
             href="https://www.linkedin.com/in/luangiomo/"
             target="_blank"
           >
-            <SiLinkedin />
+            {/* <SiLinkedin /> */}
           </a>
           <a
             className="cursor-pointer hover:text-white"
             href="https://github.com/luangiomo"
             target="_blank"
           >
-            <SiGithub />
+            {/* <SiGithub /> */}
           </a>
         </div>
       </div>
@@ -52,5 +52,3 @@ function About() {
     </div>
   );
 }
-
-export default About;

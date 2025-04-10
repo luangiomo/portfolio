@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 import { SkillType } from "./skills";
-import LogoEasyAlmanax from "@/app/assets/favicon-04.png";
-import LogoBuildGuess from "@/app/assets/Group.png";
+import LogoEasyAlmanax from "@/app/assets/project-easy-almanax-logo.png";
+import LogoBuildGuess from "@/app/assets/project-build-guess-logo.png";
 
 export type ProjectType = {
   name: string;

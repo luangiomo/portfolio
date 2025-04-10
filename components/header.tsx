@@ -1,7 +1,6 @@
 "use client";
 
 import { navigations } from "@/data/navigation";
-import Link from "next/link";
 
 export default function Header({
   mode = "vertical",
@@ -50,29 +49,27 @@ export default function Header({
               : "flex flex-row gap-4 text-xl"
           }`}
         >
-          {navigations.map(({ name, icon: Icon, link }) => (
-            <Link key={link} href={`#${link}`} about={name}>
-              <li
-                key={name}
-                className={`${mode === "vertical" ? "pr-6" : ""}
+          {navigations.map(({ name, link }) => (
+            <li
+              key={name}
+              className={`${mode === "vertical" ? "pr-6" : ""}
               transition-colors duration-300 flex gap-2 leading-tight font-mono p-2 items-center bg-transparent hover:!text-white rounded-lg cursor-pointer`}
-                // style={{
-                //   color: getActiveLink(link) ? "#FFFFFF" : "#FFFFFF99",
-                //   backgroundColor: getActiveLink(link)
-                //     ? "#FFFFFF1A"
-                //     : "transparent",
-                // }}
-                // onClick={() => {
-                //   const element = document.querySelector(`#${link}`);
-                //   element?.scrollIntoView({
-                //     behavior: "smooth",
-                //   });
-                // }}
-              >
-                <Icon />
-                {mode === "vertical" ? name : null}
-              </li>
-            </Link>
+              // style={{
+              //   color: getActiveLink(link) ? "#FFFFFF" : "#FFFFFF99",
+              //   backgroundColor: getActiveLink(link)
+              //     ? "#FFFFFF1A"
+              //     : "transparent",
+              // }}
+              onClick={() => {
+                const element = document.querySelector(`#${link}`);
+                element?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            >
+              {/* <Icon /> */}
+              {mode === "vertical" ? name : null}
+            </li>
           ))}
         </ul>
       </nav>
