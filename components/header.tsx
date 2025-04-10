@@ -49,7 +49,7 @@ export default function Header({
               : "flex flex-row gap-4 text-xl"
           }`}
         >
-          {navigations.map(({ name, link }) => (
+          {navigations.map(({ name, icon: Icon, link }) => (
             <li
               key={name}
               className={`${mode === "vertical" ? "pr-6" : ""}
@@ -67,7 +67,7 @@ export default function Header({
                 });
               }}
             >
-              {/* <Icon /> */}
+              <Icon />
               {mode === "vertical" ? name : null}
             </li>
           ))}
