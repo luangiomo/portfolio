@@ -36,7 +36,7 @@ export const projects: ProjectType[] = [
   {
     name: "Build Guess",
     shortlink: "buildguess.com/pt",
-    link: "https://buildguess.com/pt",
+    link: "https://guess-lol-item.vercel.app/",
     description:
       "Quiz interativo onde jogadores de League of Legends tentam adivinhar o item final com base na receita, testando seu conhecimento de forma divertida.",
     skills: ["Vue.js", "Pinia", "Tailwind CSS", "I18n"],
