@@ -39,14 +39,14 @@ export default function Header({
         mode === "vertical"
           ? "py-0 mb-0 bg-transparent"
           : "z-100 md:hidden py-2 mb-4 bg-black "
-      } sticky top-0 text-xl `}
+      } sticky top-0 text-lg `}
     >
       <nav>
         <ul
           className={`${
             mode === "vertical"
               ? "flex flex-col text-xs"
-              : "flex flex-row gap-4 text-xl"
+              : "flex flex-row gap-4 text-lg"
           }`}
         >
           {navigations.map(({ name, icon: Icon, link }) => (

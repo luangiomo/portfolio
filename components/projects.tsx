@@ -27,7 +27,7 @@ export default function Projects() {
                   <Image className="w-6 h-auto" src={icon} alt={`Logo`} />
                 </span>
               ) : null}
-              <h2 className="leading-tight font-mono font-semibold uppercase text-base  text-white tracking-tight whitespace-nowrap">
+              <h2 className="leading-tight font-mono font-semibold uppercase text-lg text-white tracking-tight whitespace-nowrap">
                 {name}
               </h2>
             </div>

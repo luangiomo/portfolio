@@ -14,17 +14,34 @@ export default function SkillsContainer() {
   );
 
   const skills = skillsData;
-  const primarySkills = skills.slice(0, 5);
-  const secondarySkills = skills.slice(5);
+  const allCategories = Array.from(
+    new Set(skillsData.map((skill) => skill.category))
+  );
+
+  const primarySkills = skills
+    .sort((a, b) => {
+      // Ordena a categoria "framework" antes de "code"
+      if (a.category === "framework" && b.category !== "framework") return -1;
+      if (a.category !== "framework" && b.category === "framework") return 1;
+      return 0;
+    })
+    .filter(
+      (skill) => skill.category === "framework" || skill.category === "code"
+    )
+    .slice(0, 5);
+  const secondarySkills = skills
+    .filter(
+      (skill) =>
+        skill.category === "code" ||
+        skill.category === "framework" ||
+        skill.category === "style"
+    )
+    .slice(5);
   const currentColor = currentSkill?.color;
 
-  //   <button className="bg-white/10 border border-white/20 p-3 rounded-2xl font-sans text-xs text-white">
-  //   <div className="w-30 h-30 bg-white/30 rounded-lg" />
-  // </button>
-
   return (
-    <div className="w-full relative scale-90 md:scale-100">
-      <code className="transition-colors duration-300 relative z-30 w-126 p-3 bg-white/10 border border-white/20 rounded-2xl flex gap-2 items-center text-white/60">
+    <div className="w-full relative md:scale-100">
+      <code className="transition-colors duration-300 relative z-30 w-full sm:w-10/12 p-3 bg-white/10 border border-white/20 rounded-lg flex gap-2 items-center text-white/60">
         <div className="flex gap-2 font-mono text-xs text-white/40">
           <div className="flex flex-col">
             {[...Array(5)].map((_, index) => (
@@ -36,33 +53,52 @@ export default function SkillsContainer() {
             <span>{"}"}</span>
           </div>
         </div>
-        <div
-          className="font-mono text-xs transition-colors duration-300"
+        <p
+          className="leading-relaxed font-mono text-xs transition-colors duration-300"
           style={{ color: currentColor ? "#FFFFFF33" : "inherit" }}
         >
-          {`"skills": [ `}
-          {skills.map((skill, index) => (
-            <span
-              key={skill.name}
-              onMouseEnter={() => setCurrentSkill(skill)}
-              onMouseLeave={() => setCurrentSkill(undefined)}
-              className="cursor-pointer"
-            >
+          {allCategories.map((category) => (
+            <span key={category}>
               <span
                 style={{
                   color:
-                    currentSkill?.name === skill.name
-                      ? currentColor
-                      : "inherit",
+                    currentSkill?.category === category ? "white" : "inherit",
                 }}
               >
-                {`"${skill.name}"`}
+                {category}:
               </span>
-              <span>{index + 1 !== skills.length && ", "}</span>
+              {` [ `}
+              {skills
+                .filter((skill) => skill.category === category)
+                .map((skill, index) => (
+                  <span
+                    key={skill.name}
+                    onMouseEnter={() => setCurrentSkill(skill)}
+                    onMouseLeave={() => setCurrentSkill(undefined)}
+                    className="cursor-pointer whitespace-pre-wrap"
+                  >
+                    <span
+                      style={{
+                        color:
+                          currentSkill?.name === skill.name
+                            ? currentColor
+                            : "inherit",
+                      }}
+                    >
+                      {`"${skill.name}"`}
+                    </span>
+                    <span>
+                      {index + 1 !==
+                        skills.filter((skill) => skill.category === category)
+                          .length && ", "}
+                    </span>
+                  </span>
+                ))}
+              {" ]"}
+              <br />
             </span>
           ))}
-          {" ]"}
-        </div>
+        </p>
       </code>
       <div className="transition-colors duration-300 stroke-1 stroke-white/20">
         <FirstPath
@@ -82,23 +118,23 @@ export default function SkillsContainer() {
         />
         <SecondPath className="absolute right-80 z-10" />
         <ThirdPath
-          className="absolute right-58 z-20 pulse-animation electricity-effect-3  duration-100 ease-in-out"
+          className="absolute right-68 z-20 pulse-animation electricity-effect-3 duration-100 ease-in-out"
           style={{
             stroke: currentColor ?? "#FFFFFF33",
             strokeWidth: 1,
           }}
         />
-        <ThirdPath className="absolute right-58 z-10" />
+        <ThirdPath className="absolute right-68 z-10" />
         <FourthPath
-          className="absolute right-20.5 top-20 z-20 pulse-animation electricity-effect-4  duration-250 ease-in-out"
+          className="absolute right-38 z-20 pulse-animation electricity-effect-4  duration-250 ease-in-out"
           style={{
             stroke: currentColor ?? "#FFFFFF33",
             strokeWidth: 1,
           }}
         />
-        <FourthPath className="absolute right-20.5 top-20 z-10" />
+        <FourthPath className="absolute right-38 z-10" />
       </div>
-      <div className="justify-self-end relative mt-7 transition-colors duration-300 w-80 px-2 py-2 z-30 border border-white/20 rounded-2xl bg-linear-to-b from-white/10 to-white/0">
+      <div className="justify-self-end relative mt-7 transition-colors duration-300 w-80 px-2 py-2 z-30 border border-white/20 rounded-lg bg-linear-to-b from-white/10 to-white/0">
         <div className="flex">
           {primarySkills.map((skill, index) => (
             <div
@@ -108,7 +144,7 @@ export default function SkillsContainer() {
               onMouseLeave={() => setCurrentSkill(undefined)}
             >
               <span
-                className="flex justify-center items-center text-white/60 text-xl transition-colors duration-300 w-full aspect-square bg-white/10 rounded-xl"
+                className="flex justify-center items-center text-white/60 text-lg transition-colors duration-300 w-full aspect-square bg-white/10 rounded-lg"
                 style={{
                   color:
                     currentSkill?.name === skill.name

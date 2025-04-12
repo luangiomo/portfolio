@@ -1,3 +1,8 @@
+import { StaticImageData } from "next/image";
+import Fitec from "@/app/assets/company-fitec.png";
+import ETECBentoQuirino from "@/app/assets/education-etec-bento-quirino.png";
+import Metrocamp from "@/app/assets/education-unimetrocamp.png";
+
 export type ExperienceType = {
   type: "professional" | "educational";
   placeName: string;
@@ -14,25 +19,11 @@ export type ExperienceType = {
     shortState: string;
     city: string;
   };
+  icon: StaticImageData;
   model: "presential" | "remote";
 };
 
 export const experiences: ExperienceType[] = [
-  // {
-  //   type: "professional",
-  //   placeName: "Freelancer",
-  //   model: "remote",
-  //   startIn: {
-  //     month: "Jan",
-  //     year: 2024,
-  //   },
-  //   endIn: null,
-  //   location: {
-  //     city: "Campinas",
-  //     shortState: "SP",
-  //   },
-  //   role: "Desenvolvedor Front-end",
-  // },
   {
     type: "professional",
     placeName: "FITec",
@@ -50,6 +41,7 @@ export const experiences: ExperienceType[] = [
       shortState: "SP",
     },
     role: "Desenvolvedor Front-end",
+    icon: Fitec,
   },
   {
     type: "professional",
@@ -68,6 +60,7 @@ export const experiences: ExperienceType[] = [
       shortState: "SP",
     },
     role: "Estagiário",
+    icon: Fitec,
   },
   {
     type: "educational",
@@ -86,6 +79,7 @@ export const experiences: ExperienceType[] = [
       shortState: "SP",
     },
     role: "Ciências da computação",
+    icon: Metrocamp,
   },
   {
     type: "educational",
@@ -104,5 +98,6 @@ export const experiences: ExperienceType[] = [
       shortState: "SP",
     },
     role: "Técnico em Informática",
+    icon: ETECBentoQuirino,
   },
 ];
